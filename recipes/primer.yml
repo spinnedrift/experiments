@@ -18,6 +18,7 @@ modules:
     repos:
       cleanup: true
       copr:
+        - lizardbyte/stable
         - ublue-os/staging
         - ublue-os/packages
     install:
@@ -26,6 +27,7 @@ modules:
         - bazaar
         - kitty
         - ptyxis
+        - sunshine
         - uupd
 
   - type: brew
