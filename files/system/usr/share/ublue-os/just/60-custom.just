@@ -1,5 +1,6 @@
 setup-cider:
     #!/usr/bin/bash
+    set -euo pipefail
     source /usr/lib/ujust/ujust.sh
     OPTION=$(ugum choose "Install Cider" "Uninstall Cider")
     purchase_cider=$(Urllink "https://taproom.cider.sh/about" "click here")
@@ -16,12 +17,12 @@ setup-cider:
       sudo bash -c 'echo "gpgcheck=1" >> /etc/yum.repos.d/cider.repo'
       sudo bash -c 'echo "gpgkey=https://repo.cider.sh/RPM-GPG-KEY" >> /etc/yum.repos.d/cider.repo'
       sudo chattr +i /etc/yum.repos.d/cider.repo
-      rpm-ostree install cider || exit 1
+      rpm-ostree install cider
       echo "{bold}Cider client installed. Please reboot system to continue Cider setup.${normal}"
-    elif [ "$OPTION" == "Uninstall Cider" ] || [ "${OPTION,,}" == "uninstall" ];
+    elif [ "$OPTION" == "Uninstall Cider" ] || [ "${OPTION,,}" == "uninstall" ]; then
       echo "${bold}Uninstalling Cider${normal}"
       sudo chattr -i /etc/yum.repos.d/cider.repo
       sudo rm /etc/yum.repos.d/cider.repo
-      rpm-ostree remove cider || exit 1
+      rpm-ostree remove cider
       echo "{bold}Cider client uninstalled. Please reboot system for the changes to take effect.${normal}"
     fi

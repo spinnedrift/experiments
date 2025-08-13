@@ -1,0 +1,13 @@
+#!/bin/bash
+set -euo pipefail
+
+# A simple GNOME Software stub to prevent BlueBuild's Flatpak install actions from erroring out
+
+source /usr/lib/ujust/ujust.sh
+
+if [ "$1" == "--quit" ]; then
+    echo "GNOME Software stub executed with --quit argument"
+    exit 0
+else
+    exit 1
+fi

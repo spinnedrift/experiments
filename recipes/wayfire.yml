@@ -26,5 +26,13 @@ modules:
   - from-file: primer.yml
   - from-file: flatpaks.yml
 
+  - type: gschema-overrides # Wayfire specific gtk configs
+    include:
+      - zz1-wf-config.override
+
+  - type: script
+    scripts:
+      - adw-gtk3.sh # example: run files/scripts/myscript.sh
+
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 

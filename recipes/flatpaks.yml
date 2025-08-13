@@ -5,7 +5,7 @@ modules:
         repo:
           # you can override the title to make inclusion of both system and user repos clearer
           title: Flathub (user)
-      - notify: false
+      - notify: true
         scope: system
         repo:
           title: Flathub (system)
