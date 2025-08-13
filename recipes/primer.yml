@@ -21,7 +21,6 @@ modules:
       packages:
         - https://updates.safing.io/latest/linux_amd64/packages/Portmaster-2.0.24-1.x86_64.rpm
         - bazaar
-        - kitty
         - ptyxis
         - sunshine
         - uupd

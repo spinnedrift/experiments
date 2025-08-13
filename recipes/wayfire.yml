@@ -20,8 +20,6 @@ modules:
   - type: rpm-ostree
     remove:
       - foot
-    install:
-      - wayvnc
 
   - from-file: primer.yml
   - from-file: flatpaks.yml

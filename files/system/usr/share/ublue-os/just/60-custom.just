@@ -9,7 +9,7 @@ setup-cider:
       echo "${bold}${yellow}If you have not done so, please ${purchase_cider} then click Sign In, and choose your purchase method.${normal}"
       read -p "${bold}Press enter to continue.${normal}"
       echo "${bold}Installing Cider${normal}"
-      # sudo rpm --import https://repo.cider.sh/RPM-GPG-KEY
+      sudo rpm --import https://repo.cider.sh/RPM-GPG-KEY
       sudo bash -c 'echo "[cidercollective]" > /etc/yum.repos.d/cider.repo'
       sudo bash -c 'echo "name=Cider Collective Repository" >> /etc/yum.repos.d/cider.repo'
       sudo bash -c 'echo "baseurl=https://repo.cider.sh/rpm/RPMS" >> /etc/yum.repos.d/cider.repo'
