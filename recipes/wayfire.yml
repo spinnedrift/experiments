@@ -26,7 +26,7 @@ modules:
 
   - type: gschema-overrides # Wayfire specific gtk configs
     include:
-      - zz1-wf-config.override
+      - zz1-wf-config.gschema.override
 
   - type: script
     scripts:
