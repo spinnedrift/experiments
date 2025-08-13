@@ -1,7 +1,5 @@
 modules:
   - type: rpm-ostree
-    keys:
-      - https://repo.cider.sh/RPM-GPG-KEY
     install:
       - fastfetch
       - gum
@@ -13,8 +11,6 @@ modules:
       - firewall-config # Portmaster is being installed
 
   - type: dnf
-    optfix:
-      - safing
     repos:
       cleanup: true
       copr:
