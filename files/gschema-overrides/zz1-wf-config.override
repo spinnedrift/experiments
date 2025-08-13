@@ -1,2 +1,5 @@
 [org.gnome.desktop.wm.preferences]
 button-layout=':minimize,maximize,close'
+
+[org.gnome.desktop.wm.interface]
+gtk-theme='adw-gtk3-dark'
