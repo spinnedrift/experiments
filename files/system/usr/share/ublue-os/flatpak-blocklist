@@ -1,0 +1,3 @@
+deny app.devsuite.Ptyxis/*
+deny dev.lizardbyte.app.Sunshine/*
+deny sh.cider.Cider/*

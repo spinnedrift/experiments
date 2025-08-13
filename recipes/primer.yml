@@ -1,0 +1,38 @@
+modules:
+  - type: rpm-ostree
+    keys:
+      - https://repo.cider.sh/RPM-GPG-KEY
+    install:
+      - fastfetch
+      - gum
+    remove:
+      # example: removing firefox (in favor of the flatpak)
+      # "firefox" is the main package, "firefox-langpacks" is a dependency
+      - firefox
+      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+      - firewall-config # Portmaster is being installed
+
+  - type: dnf
+    optfix:
+      - safing
+    repos:
+      cleanup: true
+      copr:
+        - ublue-os/staging
+        - ublue-os/packages
+    install:
+      packages:
+        - https://updates.safing.io/latest/linux_amd64/packages/Portmaster-2.0.24-1.x86_64.rpm
+        - bazaar
+        - kitty
+        - ptyxis
+        - uupd
+
+  - type: brew
+    nofile-limits: true # increase nofile limits
+    brew-analytics: true # disable telemetry
+
+  - type: systemd
+    system:
+      disabled:
+        - firewalld.service
