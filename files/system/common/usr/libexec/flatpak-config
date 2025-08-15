@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Exit if any errors found
+set -euo pipefail
+
+# Allow flatpaks to see the user configuration directories
+flatpak override --filesystem=xdg-config/*
+touch /var/lib/flatpak/.configured

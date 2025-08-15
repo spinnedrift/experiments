@@ -28,6 +28,9 @@ jobs:
         recipe:
           # !! Add your recipes here
           - wayfire.yml
+          - hyprland.yml
+          - cinnamon.yml
+        rechunk: true
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image

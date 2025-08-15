@@ -1,12 +1,12 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: wayfire
+name: hyprland
 # description will be included in the image's metadata
-description: Spinnedrift Wayfire
+description: Spinnedrift Hyprland
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/wayblueorg/wayfire
+base-image: ghcr.io/wayblueorg/hyprland
 image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -14,22 +14,29 @@ image-version: latest # latest is also supported if you want new updates ASAP
 modules:
   - type: files
     files:
-      - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+      - source: system/common
+        destination: / # Common files
+      - source: system/hyprland
+        destination: / # Hyprland-specific files
 
-    modules:
-      - from-file: primer.yml
-      - from-file: flatpaks.yml
+  - type: rpm-ostree
+    remove:
+      - kitty
+      - thunar
+    install:
+      - nemo
 
-  - type: default-flatpaks
-    configurations:
-      - notify: true # Send notification after install/uninstall is finished (true/false)
-        scope: system
-        # If no repo information is specified, Flathub will be used by default
-        install: # system flatpaks we want all users to have and not remove
-          - org.mozilla.firefox
-          - org.gnome.Loupe
-      - scope: user # Also add Flathub user repo, but no user packages
+  - from-file: primer.yml
+  - from-file: flatpaks.yml
+
+  - type: script
+    scripts:
+      - adw-gtk3.sh # example: run files/scripts/myscript.sh
+      - hyprland.sh
+
+  - type: gschema-overrides # Wayfire specific gtk configs
+    include:
+      - zz1-hypr-config.gschema.override
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 

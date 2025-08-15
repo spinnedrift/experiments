@@ -1,12 +1,12 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: wayfire
+name: cinnamon
 # description will be included in the image's metadata
-description: Spinnedrift Wayfire
+description: Spinnedrift Cinnamon
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/wayblueorg/wayfire
+base-image: ghcr.io/ublue-os/base-main
 image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -16,12 +16,15 @@ modules:
     files:
       - source: system/common
         destination: / # Common files
-      - source: system/wayfire
-        destination: / # Wayfire-specific files
+  - type: dnf
+    install:
+      - @cinnamon-desktop-environment
 
   - type: rpm-ostree
     remove:
-      - foot
+      - gnome-terminal
+      - gnome-software
+      - gnome-system-monitor
 
   - from-file: primer.yml
   - from-file: flatpaks.yml
@@ -30,9 +33,9 @@ modules:
     scripts:
       - adw-gtk3.sh # example: run files/scripts/myscript.sh
 
-  - type: gschema-overrides # Wayfire specific gtk configs
-    include:
-      - zz1-wf-config.gschema.override
+#  - type: gschema-overrides # Wayfire specific gtk configs
+#    include:
+#      - zz1-wf-config.gschema.override
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 

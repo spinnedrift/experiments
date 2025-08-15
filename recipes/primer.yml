@@ -21,6 +21,8 @@ modules:
       packages:
         - https://updates.safing.io/latest/linux_amd64/packages/Portmaster-2.0.24-1.x86_64.rpm
         - bazaar
+        - kdeconnect
+        - kdeconnect-libs
         - ptyxis
         - sunshine
         - uupd
@@ -29,7 +31,13 @@ modules:
     nofile-limits: true # increase nofile limits
     brew-analytics: true # disable telemetry
 
+  - type: script
+    scripts:
+      - skel.sh
+
   - type: systemd
     system:
       disabled:
         - firewalld.service
+      enabled:
+        - flatpak-config.service

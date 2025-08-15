@@ -1,18 +1,24 @@
 modules:
   - type: default-flatpaks
     configurations:
-      - scope: user
-        repo:
-          # you can override the title to make inclusion of both system and user repos clearer
-          title: Flathub (user)
-      - notify: true
+      - notify: false
         scope: system
         repo:
           title: Flathub (system)
         install: # system flatpaks we want all users to have and not remove
           - org.mozilla.firefox
           - com.github.tchx84.Flatseal
+          - com.ranfdev.DistroShelf
+          - com.github.neithern.g4music
           - io.github.flattool.Warehouse
           - io.missioncenter.MissionCenter
-          - com.github.rafostar.Clapper
+          - org.videolan.VLC
+          - org.gnome.Boxes
           - org.gnome.Loupe
+          - org.gnome.TextEditor
+          - org.gtk.Gtk3theme.adw-gtk3
+          - org.gtk.Gtk3theme.adw-gtk3-dark
+        scope: user
+        repo:
+          # you can override the title to make inclusion of both system and user repos clearer
+          title: Flathub (user)
