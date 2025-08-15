@@ -32,7 +32,13 @@ modules:
   - type: script
     scripts:
       - adw-gtk3.sh # example: run files/scripts/myscript.sh
+
+  - type: script
+    scripts:
       - hyprland.sh
+
+  - type: script
+    scripts:
       - skel.sh
 
   - type: gschema-overrides # Wayfire specific gtk configs

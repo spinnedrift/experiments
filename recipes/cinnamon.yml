@@ -17,6 +17,10 @@ modules:
       - source: system/common
         destination: / # Common files
 
+  - type: script
+    scripts:
+      - cinnamon.sh
+
   - type: rpm-ostree
     remove:
       - gnome-terminal
@@ -29,7 +33,9 @@ modules:
   - type: script
     scripts:
       - adw-gtk3.sh # example: run files/scripts/myscript.sh
-      - cinnamon.sh
+
+  - type: script
+    scripts:
       - skel.sh
 
 #  - type: gschema-overrides # Wayfire specific gtk configs
