@@ -31,10 +31,6 @@ modules:
     nofile-limits: true # increase nofile limits
     brew-analytics: true # disable telemetry
 
-  - type: script
-    scripts:
-      - skel.sh
-
   - type: systemd
     system:
       disabled:
