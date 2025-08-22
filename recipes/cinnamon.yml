@@ -33,7 +33,6 @@ modules:
       - pidgin
       - hexchat
       - transmission
-      - libreoffice
       - eom
 
   - from-file: primer.yml

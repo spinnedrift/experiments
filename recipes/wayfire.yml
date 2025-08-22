@@ -16,8 +16,6 @@ modules:
     files:
       - source: system/common
         destination: / # Common files
-      - source: system/wayfire
-        destination: / # Wayfire-specific files
 
   - type: rpm-ostree
     remove:
