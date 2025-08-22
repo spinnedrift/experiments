@@ -26,13 +26,22 @@ modules:
       - gnome-terminal
       - gnome-software
       - gnome-system-monitor
+      - gnome-calculator
+      - mpv
+      - pidgin
+      - hexchat
+      - transmission
+      - libreoffice
+      - eom
 
   - from-file: primer.yml
-  - from-file: flatpaks.yml
+  - from-file: cinnamon-flatpaks.yml
 
   - type: script
     scripts:
-      - adw-gtk3.sh # example: run files/scripts/myscript.sh
+      - adw-gtk3.sh
+      - papirus-icons.sh
+      # example: run files/scripts/myscript.sh
 
   - type: script
     scripts:

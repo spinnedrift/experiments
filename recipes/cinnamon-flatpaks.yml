@@ -14,7 +14,7 @@ modules:
         - io.missioncenter.MissionCenter
         - org.videolan.VLC
         - org.gnome.Boxes
-        - org.gnome.Loupe
-        - org.gnome.TextEditor
         - org.gtk.Gtk3theme.adw-gtk3
         - org.gtk.Gtk3theme.adw-gtk3-dark
+        - org.xfce.ristretto
+        - org.gnome.Calculator
