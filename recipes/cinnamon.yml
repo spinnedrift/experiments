@@ -28,7 +28,6 @@ modules:
 
   - type: script
     scripts:
-      - adw-gtk3.sh
       - papirus-icons.sh
       # example: run files/scripts/myscript.sh
 
