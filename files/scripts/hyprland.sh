@@ -1,4 +1,5 @@
 #!/bin/sh
+dnf install -y nemo
 
 # Replace default terminal keybinding for Kitty with Ptyxis
 sed -i 's/kitty/ptyxis/g' /usr/share/hyprland/hyprland.conf

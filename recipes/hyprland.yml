@@ -23,8 +23,6 @@ modules:
     remove:
       - kitty
       - thunar
-    install:
-      - nemo
 
   - from-file: primer.yml
   - from-file: flatpaks.yml
