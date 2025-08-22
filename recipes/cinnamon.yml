@@ -16,6 +16,8 @@ modules:
     files:
       - source: system/common
         destination: / # Common files
+      - source: system/cinnamon
+        destination: / # Cinnamon-specific files
 
   - type: script
     scripts:
