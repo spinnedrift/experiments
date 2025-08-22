@@ -27,6 +27,7 @@ modules:
     remove:
       - gnome-terminal
       - gnome-software
+      - gnome-software-rpm-ostree
       - gnome-system-monitor
       - gnome-calculator
       - mpv
